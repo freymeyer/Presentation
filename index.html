@@ -88,14 +88,103 @@
       <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-# Bridge
+### Singleton, Bridge, Adapter 
+##### Design Patterns
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
+>“Design Patterns: Elements of Reusable Object-Oriented Software”
+
+This book was first published in 1994 and it’s one of the most popular books to learn design patterns. 
+
+It got nicknamed as Gangs of Four design patterns because of four authors:
+*Erich Gamma*, *Richard Helm*, *Ralph Johnson*, and *John Vlissides*. 
+
+Furthermore, it got a shorter name as
+“GoF Design Patterns”.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+GoF Design Patterns are divided into three categories:
+1. **Creational**: The design patterns that deal with the creation of an object.
+2. **Structural**: The design patterns in this category deals with the class structure such as Inheritance and Composition.
+3. **Behavioral**: This type of design patterns provide solution for the better interaction between objects, how to provide lose coupling, and flexibility to extend easily in future.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+this presentation will cover one **Creational** and two **Structural** design patterns.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# SINGLETON
+The Singleton pattern is similar to having a one-of-a-kind item in your code that you wish to use in multiple locations but only have one of.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+It's similar to a superhero's hidden identity: 
+- there is only one genuine identity, and while numerous people can call for assistance, they always get the same superhero.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Here's how it works:
+
+**One and Only One**: 
+- Singleton assures that only one of these particular objects is in your program. 
+- No matter how many times you try, you'll always get the same one. 
+
+**Easy Access**: 
+- It enables other portions of your code to request this particular object.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Consider a superhero phone booth. 
+
+There is only one phone booth, and everyone uses it whenever they need help. 
+
+It's similar to a Singleton in that there is only one phone booth (**one instance**), and anyone can use it to call for assistance (**access the instance**).
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+In code, it might look like this (in a simple form):
+```
+# This is where we store the 
+# one and only phone booth instance 
+
+class SuperheroPhoneBooth: 
+instance = None
+```
+```
+# This method is how you call 
+# for the superhero phone booth 
+@classmethod 
+def get_instance(cls): 
+	if cls.instance is None: 
+	# If the phone booth doesn't exist, create it 
+	cls.instance = SuperheroPhoneBooth() 
+	return cls.instance
+```
+```
+# Now, whenever you need the 
+# superhero phone booth, you can just do this: 
+
+phone_booth = SuperheroPhoneBooth.get_instance()
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+That's the Singleton pattern: 
+- making sure you only have one of something and that anyone can readily acquire it when needed. 
+- It helps handle specialized resources or services in your code.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="fu 1.png" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Bridge
 A *Structural Design Pattern* that allows separation between **Abstraction** and its **Implementation**.
 
 So they can act as single entities.
 
 The bridge Method is always considered as one of the best methods to organize the class hierarchy.
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="fkiabt 1.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 There are 4 components of Bridge Design Patterns.
@@ -104,7 +193,7 @@ There are 4 components of Bridge Design Patterns.
 
 - ****Concrete Abstraction**** 
 	-  Extends the abstraction takes the finer detail one level below. Hides the finer elements from implementers.
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="올려보기.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 - **Implementation**
@@ -112,7 +201,7 @@ There are 4 components of Bridge Design Patterns.
 
 - ****Concrete Implementation**** 
 	- Implements the above implementer by providing the concrete implementation.
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="음침.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 Design mechanism of this pattern.
@@ -122,19 +211,19 @@ Design mechanism of this pattern.
 
 - The abstraction contains a reference to the implementer.
 	- Since we can change the reference, we are able to change the abstraction’s implementer at run-time.
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="따봉.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 The Bridge pattern is an application of an advice, "prefer composition over inheritance".
 
 It becomes convenient when you planned to add multiple subclasses different times that are orthogonal with one another.
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.2" data-background-image="몰컴.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 Here is an example, in producing and assembling two vehicles
 
 <img src="Pasted image 20231104175644.png" alt="" style="object-fit: scale-down">
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="마이크.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 The problem here lies when changing the **Bus class** and the **Bike class**
@@ -142,13 +231,13 @@ The problem here lies when changing the **Bus class** and the **Bike class**
 If you want to change the **Bus class**, then you might as well change the **ProduceBus** and **AssembleBus** whose functions of the **Bus class**.
 
 And if the change is function specific, then you may need to change the **Bike class** as well.
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="죽빵 .png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 The problem can be solved by decoupling the Vehicle and Workshop interfaces.
 
 Hence, using Bridge Design Pattern.
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="풉.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <img src="Pasted image 20231104180717.png" alt="" style="object-fit: scale-down">
@@ -157,7 +246,7 @@ Hence, using Bridge Design Pattern.
 Here, the bridge pattern separates abstraction (Vehicle) from its implementation (Workshop)
 
 Now they are acting independently, eliminates the hassle of "modifying" each subclasses and superclasses every time there is changes.
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="마이크.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## Code Example.
@@ -171,10 +260,11 @@ class Vehicle:
     def manufacture(self):
         pass
 ```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="마이크.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 Concrete Abstraction
+
 ```
 class Bus(Vehicle):
     def manufacture(self):
@@ -188,10 +278,11 @@ class Bike(Vehicle):
         self.workshop1.assemble()
         self.workshop2.produce()
 ```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="마이크.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 Implementor
+
 ```
 class Workshop:
     def assemble(self):
@@ -213,10 +304,11 @@ class ProduceWorkshop(Workshop):
         print("Producing the vehicle")
 
 ```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="우웩.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 Client
+
 ```
 if __name__ == "__main__":
     assemble_workshop = AssembleWorkshop()
@@ -249,6 +341,7 @@ This design pattern allows you to vary the assembly and production processes ind
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 # Adapter
+
 A Structural Design Pattern that allows us make incompatible objects became adaptable to each other.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
@@ -362,6 +455,16 @@ operate_device(adapter)
 - The more compatibility we want, the many adaptation with adaptee chain it requires
 
 - Complexity of the code continues to rise after adding more new classes, objects and interfaces.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.5" data-background-image="fkiabt 2.png" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# That's all!
+#### Report by:
+- Zeus Lhorence Dela Cruz
+- Richard Floyd Eliedo
+- Jnald Fabrigar
+- Niel Bert Fabale
+- Jeanette Ferrater
 </div></script></section></div>
     </div>
 
