@@ -6,8 +6,8 @@
 
     <title></title>
     <link rel="stylesheet" href="dist/reveal.css" />
-    <link rel="stylesheet" href="dist/theme/blood.css" id="theme" />
-    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="dist/theme/sky.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
 	<link rel="stylesheet" href="css/layout.css" />
 	<link rel="stylesheet" href="plugin/customcontrols/style.css">
 
@@ -88,16 +88,23 @@
       <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Singleton, Bridge, Adapter 
-##### Design Patterns
+## Design Patterns 
+#### Presentation by Group 3
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## What to expect?
+#### Singleton
+#### Bridge
+#### Adapter
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 >“Design Patterns: Elements of Reusable Object-Oriented Software”
 
-This book was first published in 1994 and it’s one of the most popular books to learn design patterns. 
+This book was first published in 1994 and it’s one of the most popular books to learn **design patterns**. 
 
-It got nicknamed as Gangs of Four design patterns because of four authors:
+It got nicknamed as **Gangs of Four** design patterns because of four authors:
 *Erich Gamma*, *Richard Helm*, *Ralph Johnson*, and *John Vlissides*. 
 
 Furthermore, it got a shorter name as
@@ -145,7 +152,7 @@ It's similar to a Singleton in that there is only one phone booth (**one instanc
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-In code, it might look like this (in a simple form):
+In **code**, it might look like this (in a simple form):
 ```
 # This is where we store the 
 # one and only phone booth instance 
@@ -172,7 +179,7 @@ phone_booth = SuperheroPhoneBooth.get_instance()
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-That's the Singleton pattern: 
+That's the **Singleton pattern**: 
 - making sure you only have one of something and that anyone can readily acquire it when needed. 
 - It helps handle specialized resources or services in your code.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="fu 1.png" -->
@@ -189,10 +196,10 @@ The bridge Method is always considered as one of the best methods to organize th
 
 There are 4 components of Bridge Design Patterns.
 - **Abstraction** 
-	- It is the core of the Bridge Design Pattern and it provides the reference to the implementer.
+	- It is the core of the **Bridge Design Pattern** and it provides the reference to the ***implementer***.
 
 - ****Concrete Abstraction**** 
-	-  Extends the abstraction takes the finer detail one level below. Hides the finer elements from implementers.
+	-  Extends the ***abstraction*** takes the finer detail one level below. Hides the finer elements from ***implementers***.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="올려보기.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -200,21 +207,21 @@ There are 4 components of Bridge Design Patterns.
 	- It defines the interface for implementation classes.
 
 - ****Concrete Implementation**** 
-	- Implements the above implementer by providing the concrete implementation.
+	- Implements the above *implementer* by providing the concrete implementation.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="음침.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 Design mechanism of this pattern.
-- The bridge pattern allows the Abstraction and the Implementation to be developed independently 
-- The abstraction is an interface and the implementer is also an interface.
+- The bridge pattern allows the **Abstraction** and the **Implementation** to be developed **independently** 
+- The **abstraction** is an *interface* and the **implementer** is also an *interface*.
 
 
-- The abstraction contains a reference to the implementer.
-	- Since we can change the reference, we are able to change the abstraction’s implementer at run-time.
+- The abstraction contains a reference to the **implementer**.
+	- Since we can change the reference, we are able to change the abstraction’s implementer at **run-time**.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="따봉.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-The Bridge pattern is an application of an advice, "prefer composition over inheritance".
+The Bridge pattern is an application of an advice, "***prefer composition over inheritance***".
 
 It becomes convenient when you planned to add multiple subclasses different times that are orthogonal with one another.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.2" data-background-image="몰컴.png" -->
@@ -243,14 +250,14 @@ Hence, using Bridge Design Pattern.
 <img src="Pasted image 20231104180717.png" alt="" style="object-fit: scale-down">
 
 
-Here, the bridge pattern separates abstraction (Vehicle) from its implementation (Workshop)
+Here, the bridge pattern **separates** *abstraction* (Vehicle) from its *implementation* (Workshop)
 
-Now they are acting independently, eliminates the hassle of "modifying" each subclasses and superclasses every time there is changes.
+Now they are acting independently, **eliminates** the hassle of "*modifying*" each subclasses and superclasses every time there is changes.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="마이크.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## Code Example.
-Abstraction
+**Abstraction**
 ```
 class Vehicle:
     def __init__(self, workshop1, workshop2):
@@ -263,7 +270,7 @@ class Vehicle:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="마이크.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-Concrete Abstraction
+**Concrete Abstraction**
 
 ```
 class Bus(Vehicle):
@@ -281,7 +288,7 @@ class Bike(Vehicle):
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="마이크.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-Implementor
+**Implementor**
 
 ```
 class Workshop:
@@ -292,7 +299,7 @@ class Workshop:
         pass
 ```
 
-Concrete Implementor
+**Concrete Implementor**
 
 ```
 class AssembleWorkshop(Workshop):
@@ -307,7 +314,7 @@ class ProduceWorkshop(Workshop):
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="우웩.png" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-Client
+**Client**
 
 ```
 if __name__ == "__main__":
@@ -327,14 +334,14 @@ This design pattern allows you to vary the assembly and production processes ind
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## Advantages
-- **Single Responsibility Principle** - **The bridge** method follows this principle as ***abstraction*** and ***implementation*** can act independently.
+- **Single Responsibility Principle** - The bridge method follows this principle as ***abstraction*** and ***implementation*** can act independently.
 
 - **Open/Closed Principle:** It does not violate this principle because at any time we can introduce new abstractions and extend implementations further down the road.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## Disadvantages
-- It becomes hard to manage if you have an exploded set of interfaces with minimal implementation
+- It becomes hard to manage if you have an **exploded** set of interfaces with minimal implementation
 
 - It has a slight negative impact towards performance because the abstraction needs to pass messages along with the implementation for the operation to get executed.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
@@ -342,7 +349,7 @@ This design pattern allows you to vary the assembly and production processes ind
 
 # Adapter
 
-A Structural Design Pattern that allows us make incompatible objects became adaptable to each other.
+A **Structural Design Pattern** that allows us make **incompatible** objects became **adaptable** to each other.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -356,21 +363,21 @@ And we have an object offering the same features but exposing an incompatible in
 
 So using the adapter method,
 
-1. Client makes a request to the adapter by calling a method using a target interface.
+1. **Client** makes a request to the **adapter** by calling a method using a **target** interface.
 
-2. Adapter then translate that request on the adaptee using the adaptee interface.
+2. **Adapter** then translate that request on the **adaptee** using the **adaptee** interface.
 
-3. Client receives the result of the call and is unaware of the adapter's presence.
+3. **Client** receives the result of the call and is unaware of the **adapter**'s presence.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <img src="Pasted image 20231105030016.png" alt="" style="object-fit: scale-down">
 
-- The client sees only the target interface and not the adapter.
+- The **client** sees only the **target** interface and not the **adapter**.
 
-- The adapter implements the target interface. 
+- The **adapter** implements the **target** interface. 
 
-- Adapter delegates all requests to Adaptee.
+- **Adapter** *delegates* all requests to **Adaptee**.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -379,7 +386,7 @@ How can it be applicable?
 - **To make certain classes and interfaces compatible**.
 
 - **Relatable to inheritance**. 
-	- If we want to reuse our code with classes and interfaces that lacks some functionalities, it can be done using the *Adapter method*.
+	- If we want to reuse our code with classes and interfaces that lacks some functionalities, it can be done using the ***Adapter method***.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -390,19 +397,19 @@ However, the older television only uses infrared remote control.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-Target Interface 
+**Target Interface** 
 ```
 class UniversalRemoteControl: 
 	def power_on(self): 
 		pass
 ```
-Adaptee (Old Infrared TV) 
+**Adaptee (Old Infrared TV)** 
 ```
 class InfraredTV: 
 	def switch_on(self): 
 		print("TV is switched on using the infrared remote")
 ```
-Adapter
+**Adapter**
 ```
 class InfraredTVAdapter(UniversalRemoteControl): 
 	def __init__(self, old_tv): 
@@ -414,7 +421,7 @@ class InfraredTVAdapter(UniversalRemoteControl):
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-Client
+**Client**
 ```
 def operate_device(remote_control):
 	remote_control.power_on() 
@@ -443,11 +450,11 @@ operate_device(adapter)
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## Advantages
-- **Principle of Single Responsibility:** We can achieve this principle with Adapter Method because here we can separate the concrete code from the primary logic of the client.
+- **Principle of Single Responsibility:** We can achieve this principle with *Adapter Method* because here we can **separate** the concrete code from the primary logic of the client.
 
 - **Flexibility and reusability**.
 
-- **Open/Closed principle:** We can introduce the new adapter classes into the code without violating this principle.
+- **Open/Closed principle:** We can **introduce** the new *adapter classes* into the code without violating this principle.
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
